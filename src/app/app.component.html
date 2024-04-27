@@ -1,6 +1,17 @@
-<h1>Hello World</h1>
-<h2>{{name}}</h2>
-<h3>{{getName()}}</h3>
-<h4>{{obj.name}}</h4>
-<h5>{{arr[0]}}</h5>
-<app-user-list></app-user-list>
+<app-header></app-header>
+<h1>Make Header Footer</h1>
+<h1>Simple form in Angular</h1>
+<form #simpleForm="ngForm" (ngSubmit)="getUserValue(simpleForm.value)" >
+    <input type="text" ngModel name="username" placeholder="Enter name"><br><br>
+    <input type="password" ngModel name="password" placeholder="Enter Password"><br><br>
+    <input type="text" ngModel name="age" placeholder="Enter Age"><br><br>
+    <input type="text" ngModel name="address" placeholder="Enter address"><br><br>
+    <button>Get Value</button>
+</form>
+<h1>Style Binding in Angular</h1>
+<h1 style="color:red">Header 1</h1>
+<h1 [style.color]="'green'">Header 1</h1>
+<h1 [style.color]="color">Dynamic Header 1</h1>
+<h1 [style.color]="err?'red':'green'">Conditional Header</h1>
+<button (click)="updateColor()" >Update Color</button>
+<app-footer></app-footer>
