@@ -1,5 +1,13 @@
-<h1>Hello World</h1>
-<h2>{{name}}</h2>
+<h1>Pipes Example</h1>
+<h2>{{name | uppercase}}</h2>
+<h2>{{name | titlecase}}</h2>
+<h2>{{name | lowercase}}</h2>
+<h2>{{today | date:'fullDate'}}</h2> 
+<h2>{{str | slice:2:5}}</h2> 
+<h2>{{amount | currency:'INR'}}</h2> 
+<h2>{{phonenumber | countryCode}}</h2>
+
+<hr>
 <h3>{{getName()}}</h3>
 <h4>{{obj.name}}</h4>
 <h5>{{arr[0]}}</h5>

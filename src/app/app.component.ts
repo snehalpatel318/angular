@@ -10,6 +10,10 @@ export class AppComponent {
   name = "Snehal Patel"; // variable
   obj = {name:'Snehal',age:20} // object 
   arr = ['SnehalPAtel','Shardul','Heer'] // array
+  today = Date.now()
+  str ="hello angular"
+  amount = 10
+  phonenumber = 7896587458
 
   getName(){   // function use
     return this.name;
