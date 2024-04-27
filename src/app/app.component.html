@@ -1,6 +1,34 @@
-<h1>Hello World</h1>
-<h2>{{name}}</h2>
-<h3>{{getName()}}</h3>
-<h4>{{obj.name}}</h4>
-<h5>{{arr[0]}}</h5>
-<app-user-list></app-user-list>
+<h1>Call Function in Angular</h1>
+<button (click)="getfunctionName()">Get My Name</button><!--function   -->
+<br><br>
+<button (click)="getName('Sneha')">Get My Name</button> <!-- function with element pass -->
+<br><br>
+<button (click)="myEvent('this is click event')">Click me</button>
+<br><br>
+<input type="text" #box (keyup)="myEvent(box.value)" />
+<br><br>
+<input type="text" #boxenter (keyup.enter)="myEvent(boxenter.value)" />
+<br><br>
+<input type="text" #boxspace (keyup.space)="myEvent(boxspace.value)" />
+<br><br>
+<input type="text" #boxdown (keydown)="myEvent(boxdown.value)" />
+<br><br>
+<input type="text" (blur)="myEvent('blur event')" />
+<br><br>
+<div 
+(mouseover)="myEvent('mouse in')"
+(mouseleave)="myEvent('mouse in')"
+style="background-color: skyblue;">
+Mouse events
+</div>
+<!--  Textbox get set value exmaple -->
+<br><br>
+<!-- <input type="text" (keyup)="getVal($any($event).target.value)" /> -->
+<input type="text"  #boxtext />
+<button (click)="getVal(boxtext.value)" >Get Value</button>
+<h2>{{currentVal}}</h2>
+<h1>Property Binding in Angular</h1>
+<!-- property binding example -->
+<br><br>
+<input type="text" [disabled]="disbleBox" [value]="name">
+<button (click)="enableBox()" >Enable Textbox</button>

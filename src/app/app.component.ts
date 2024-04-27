@@ -10,10 +10,23 @@ export class AppComponent {
   name = "Snehal Patel"; // variable
   obj = {name:'Snehal',age:20} // object 
   arr = ['SnehalPAtel','Shardul','Heer'] // array
+  currentVal = ''
+  disbleBox= true
 
-  getName(){   // function use
-    return this.name;
+  getfunctionName(){   // function use
+    alert(this.name);
   }
-
+  getName(name:string){   // function use with variable
+    alert(name);
+  }
+  myEvent(evt:string){
+    console.warn(evt)
+  }
+  getVal(val:string){
+    this.currentVal = val;
+  }
+  enableBox(){
+    this.disbleBox = false
+  }
   
 }
