@@ -1,6 +1,5 @@
-<h1>Hello World</h1>
-<h2>{{name}}</h2>
-<h3>{{getName()}}</h3>
-<h4>{{obj.name}}</h4>
-<h5>{{arr[0]}}</h5>
-<app-user-list></app-user-list>
+<h1>Parent to child data pass && Reusable componen</h1>
+<div *ngFor="let data of users">
+    <app-user-list [users]="data"></app-user-list>
+</div>
+<!-- <app-user-list [hero]="name" [data]="obj" [users]="data"></app-user-list> -->
