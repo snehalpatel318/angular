@@ -14,6 +14,6 @@ export class AppComponent {
   getName(){   // function use
     return this.name;
   }
-
+  isCollapsed = false;
   
 }
