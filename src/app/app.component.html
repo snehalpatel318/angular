@@ -1,6 +1,43 @@
-<h1>Hello World</h1>
-<h2>{{name}}</h2>
-<h3>{{getName()}}</h3>
-<h4>{{obj.name}}</h4>
-<h5>{{arr[0]}}</h5>
-<app-user-list></app-user-list>
+<h1>Conditions in Angular</h1>
+<h1 *ngIf="show else elseblock">If Block</h1>
+<ng-template #elseblock>
+    <h1>else block</h1>
+</ng-template>
+<h1 *ngIf="showif=='yes' else elseBlock">If Block</h1>
+<ng-template #elseBlock>
+    <h1>else block</h1>
+</ng-template>
+<h1 *ngIf="showif=='yes';then ifBlock else elseBlock">If Block</h1>
+<ng-template #ifBlock>
+    <h1>IF block</h1>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>else block</h1>
+</ng-template>
+<ng-template [ngIf]="showColor=='red'">
+    <h1>red block</h1>
+</ng-template>
+
+<h1>Switch case in Angular</h1>
+<div [ngSwitch]="color" >
+    <h2 style="color:red" *ngSwitchCase ="'red'"> red color</h2>
+    <h2 style="color:green" *ngSwitchCase ="'green'"> green color</h2>
+    <h2 style="color:blue" *ngSwitchCase ="'blue'"> blue color</h2>
+    <h2 style="color: yellow;" *ngSwitchDefault>Yellow</h2>
+</div>
+<h1>For Loop in Angular</h1>
+<h4 *ngFor="let item of data">
+    {{item}}
+</h4>
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Email</td>
+    </tr>
+    <tr *ngFor="let item of multidata">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.email}}</td>
+    </tr>
+</table>
