@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { dataType } from './user';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,13 @@ export class AppComponent {
   getName(){   // function use
     return this.name;
   }
-
+  getData(){
+    const data:dataType ={
+      name:'snehal',
+      id:1642,
+      indian:true,
+    }
+    return data
+  }
   
 }
