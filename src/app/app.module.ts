@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AdminModule } from './admin/admin.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { UserListComponent } from './user-list/user-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
