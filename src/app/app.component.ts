@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +15,21 @@ export class AppComponent {
     return this.name;
   }
 
-  
+  constructor(private viewContainer:ViewContainerRef,
+    private cfr:ComponentFactoryResolver){
+
+  }
+
+  async loadAdmin(){
+    this.viewContainer.clear()
+    const {ListComponent} =await import('./admin/list/list.component')
+    this.viewContainer.createComponent(this.cfr.resolveComponentFactory(ListComponent))
+  }
+
+  async loadUser(){
+    this.viewContainer.clear()
+    const {ListComponent} =await import('./user/list/list.component')
+    this.viewContainer.createComponent(this.cfr.resolveComponentFactory(ListComponent))
+  }
+
 }

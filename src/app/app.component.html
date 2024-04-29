@@ -1,6 +1,25 @@
-<h1>Hello World</h1>
-<h2>{{name}}</h2>
-<h3>{{getName()}}</h3>
-<h4>{{obj.name}}</h4>
-<h5>{{arr[0]}}</h5>
-<app-user-list></app-user-list>
+<h1>Lazyloading in Angular</h1>
+<h3>Admin Link</h3>
+<ul>
+    <li>
+        <a routerLink="admin/login">Login</a>
+    </li>
+    <li>
+        <a routerLink="admin/list">List</a>
+    </li>
+</ul>
+<br>
+<br>
+<h3>User Link</h3>
+<ul>
+    <li>
+        <a routerLink="user/login">Login</a>
+    </li>
+    <li>
+        <a routerLink="user/list">List</a>
+    </li>
+</ul>
+<br><br>
+<button (click)="loadAdmin()">Load Admin List</button>
+<button (click)="loadUser()">Load User List</button>
+<router-outlet></router-outlet>
