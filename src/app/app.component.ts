@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
-  name = "Snehal Patel"; // variable
-  obj = {name:'Snehal',age:20} // object 
-  arr = ['SnehalPAtel','Shardul','Heer'] // array
-
-  getName(){   // function use
-    return this.name;
-  }
-
   
+  constructor(private appservice:AppService){}
+  theme = [
+    {
+      id:'lara-light-blue',
+      label:'Lara Light Blue'
+    },
+    {
+      id:'luna-green',
+      label:'Luna Green'
+    },
+    {
+      id:'bootstrap4-dark-blue',
+      label:'Bootstrap 4 Dark Blue'
+    },
+  ]
+  selectedTheme: { id:string; label:string} = this.theme[0];
+  changeTheme(themeId:string){
+    this.appservice.swithTheme(themeId);
+  }
 }
