@@ -1,0 +1,46 @@
+<p-table [value]="employee" 
+    [scrollable]="true" 
+    scrollHeight="76vh" 
+    [paginator]="true" 
+    [rows]="request.rows" 
+    [first]="request.first"
+    [lazy]="true"
+    (onLazyLoad)="loadEmployees($event)"
+    [totalRecords]="employee.length < 10 ? 10 :20"
+    [customSort]="true"
+    (sortFunction)="loadEmployees($event)">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            <h2>Employees</h2>
+            <div>
+                <input type="text" pInputText (input)="filterEmployee()" [(ngModel)]="globalFilter" placeholder="Serach FirstName" />
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="firstName">First Name <p-sortIcon field="firstName"></p-sortIcon></th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Dob</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Country</th>
+            <th>Join Date</th>
+            <th>Status</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+        <tr>
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.dob }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.country }}</td>
+            <td>{{ employee.role }}</td>
+            <td>{{ employee.dateOfJoining }}</td>
+            <td>{{ employee.active }}</td>
+        </tr>
+    </ng-template>
+</p-table>
