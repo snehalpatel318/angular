@@ -11,7 +11,12 @@ export class AppComponent {
   name = "Snehal Patel"; // variable
   obj = {name:'Snehal',age:20} // object 
   arr = ['SnehalPAtel','Shardul','Heer'] // array
-  testname =""
+  testname ="";
+  color = '';
+  currentStyles: Record<string, string> = {};
+  canSave =  true;
+  isSpecial = true;
+  isUnchanged = true;;
 
   getName(){   // function use
     return this.name;
@@ -22,4 +27,12 @@ export class AppComponent {
     this.testname = data.name
   }
   
+  setCurrentStyles() {
+    // CSS styles: set per current state of component properties
+    this.currentStyles = {
+      'font-style':  this.canSave      ? 'italic' : 'normal',
+      'font-weight': !this.isUnchanged ? 'bold'   : 'normal',
+      'font-size':   this.isSpecial    ? '24px'   : '12px'
+    };
+  }
 }

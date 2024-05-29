@@ -2,3 +2,15 @@
 <h2>Normal Directive</h2>
 <h2 appCustmStyle>Custom Directive</h2>
 <h3>{{testname}}</h3>
+<p appHighlight>Highlight me!</p>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]="color" defaultColor="violet">Highlight me!</p>
+<p>Use ngNonBindable to stop evaluation.</p>
+<p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+<div [ngStyle]="currentStyles">
+    This div is initially italic, normal weight, and extra large (24px).
+  </div>
